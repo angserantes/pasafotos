@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Caudex', serif;
+    color: white;
+    height: 300px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.banner {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center; 
+    overflow: hidden; 
+}
+
+.banner::after {
+
+    animation: bannerAnim 3s linear forwards;}
+
+h1{
+    color: #91130F;
+    border-bottom: #91130F solid 5px;
+    border-top: #91130F solid 5px;
+    font-size: 150px;
+    margin-bottom: 80px
+}
+
+.general{
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.inicio {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    position: relative;
+ }
+
+
+.ciudad {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.myButton {
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+    background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    background-color:#c62d1f;
+    border-radius:18px;
+    border:1px solid #d02718;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #810e05;
+}
+.myButton:hover {
+    transform: perspective(500px) rotateY(15deg);
+    text-shadow: -6px 3px 2px rgba(0, 0, 0, .4);
+    background: linear-gradient(to left, #440402, #c0120c);
+}
+
+.myButton:hover::before {
+    left: 100%;
+}
+
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.mas {
+   margin: auto;
+   text-decoration: none;
+   display: inline-block;
+   width: 200px;
+   height: 50px;
+   text-align: center;
+   position: relative;
+   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+ 
+.mas div {
+   position: absolute;
+   background-color: white;
+   height: 100%;
+   width: 50px;
+   border-radius: 25px;
+   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.mas div span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 8px;
+    height: 2px;
+    width: 0px;
+    background-color: black;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ }
+
+ .mas div span::before {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 10px;
+    background-color: black;
+    position:absolute;
+    top: -3px;
+    left: 13px;
+    transform: rotate(45deg);
+ }
+
+ .mas div span::after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 10px;
+    background-color:black;
+    position:absolute;
+    top: 3px;
+    left: 13px;
+    transform: rotate(-45deg);
+ }
+.mas:hover div {
+    width: 100%;
+ }
+
+ .mas:hover div span {
+    left:25%;
+    width: 20px;
+ }
+
+ .mas p {
+    font-family: 'Mukta', sans-serif;
+    position: absolute;
+    top: calc(50% - 28px);
+    left: calc(50% - 13.5px);
+    z-index: 1;
+    color: red;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ }
+ .mas:hover p {
+    color: black;
+ }
+ 
+ .london{
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(/img/londres.jpg) center no-repeat;
+    background-size: cover;
+    height: 800px;
+
+ }
+
+ .newyork{
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(/img/newyork.jpg) center no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+.roma{
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(/img/roma.jpg) center no-repeat;
+    background-size: cover;
+    height: 800px;
+
+}
+
+.tokyo{
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(/img/tokio.jpg) center no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+.contenido{
+    width: 500px;
+    position: relative;
+    top: 35%;
+    left: 5%;
+}
+
+.contenido h2 {
+    font-size: 80px;
+    font-weight: 400;
+    color: white;
+}
+
+.contenido p {
+    
+    font-size: 20px;
+    color: #ccc;
+}
+
+@keyframes inicio {
+    0%{left: 0;}
+    10%{left: 0;}
+    15%{left: -100%;}
+    25%{left: -100%;}
+    30%{left: -200%;}
+    40%{left: -200%;}
+    45%{left: -300%;}
+    55%{left: -300%;}
+    60%{left: -200%;}
+    70%{left: -200%;}
+    75%{left: -100%;}
+    85%{left: -100%;}
+    90%{left: 0;}
+}
+
+@keyframes bannerAnim {
+    0%{right: 0;}
+    100%{right: -250%;}
+}
+
+@keyframes myButtonAnim {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
